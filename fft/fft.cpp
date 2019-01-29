@@ -4,7 +4,7 @@
 #include <complex>
 #include <time.h>
 #include <random>
-#include <iomanip>
+#include <iterator>
 
 const double pi = std::acos(-1);
 
@@ -68,12 +68,9 @@ int main(int argc, char** argv) {
     for (int i = 0; i < N; i++) {
         u[i] = std::complex<double>(rand() / (double) RAND_MAX * 100 - 50, rand() / (double) RAND_MAX * 100 - 50);
     }
-
+    std::cout.precision(2); // global set nb of digits after decimal point when printing floating number
     auto print = [](std::complex<double>* u, const int& N) {
-        for (int i = 0; i < N; i++) {
-            std::cout << std::fixed;
-            std::cout << std::setprecision(2) << u[i] << " ";
-        }
+        std::copy(u, u + N, std::ostream_iterator<std::complex<double>>(std::cout << std::fixed, " "));
         std::cout << std::endl;
     };
     std::cout << "Original sequence:\n" << std::endl;
