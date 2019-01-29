@@ -21,6 +21,7 @@ struct badge {
         name = b.name;
         return *this;
     }
+
     friend std::ostream& operator<<(std::ostream &in, const badge& b) {
         in << "id: " << b.id << " age: " << b.age << " name: " << b.name;
         return in;
@@ -41,4 +42,9 @@ int main(int argc, char** argv) {
     std::for_each(ls, ls + 3, [](const badge& b) {
         std::cout << b << std::endl;
     });
+
+    int* i = new int(5);
+    int& u = *i;
+    u = 7;
+    std::cout << *i << std::endl;
 }
