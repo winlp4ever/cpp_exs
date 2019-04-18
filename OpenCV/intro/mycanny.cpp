@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <time.h>
+#include <vector>
 
 #include "utils.hpp"
 

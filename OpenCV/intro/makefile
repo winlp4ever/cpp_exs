@@ -20,5 +20,11 @@ test: test.cpp
 mycanny: mycanny.cpp utils.hpp utils.cpp
 	$(CC) $(CFLAGS) mycanny.cpp utils.cpp -o $@ $(LDFLAGS)
 
+laplacian: laplacian.cpp 
+	$(CC) $(CFLAGS) $? -o $@ $(LDFLAGS)
+
+houghlines: houghlines.cpp 
+	$(CC) $(CFLAGS) $? -o $@ $(LDFLAGS)
+
 clean:
 	rm -f showvid showim vidtrackbar transforms test mycanny

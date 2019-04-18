@@ -3,4 +3,5 @@ inf442-mementocpp.pdf
 */*/.vscode/*
 .*
 ..*
-*/*/*.mp4
+**/*.mp4
+**/*.pdf
